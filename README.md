@@ -23,7 +23,7 @@
   - creationDate and value were the only two variables that were kept
   - creationDate included the date in YYYY-MM-DD form and time in HH-MM-SS form.
 
-[initial_df]()
+[initial_df](https://github.com/bmcnamee96/health_data/blob/main/Pictures/initial_df.png)
 
 The data was put into a dataframe after using Beautiful Soup to parse the xml file.  This dataframe was then exported to a csv file for easy retrieval in future use.
 
@@ -62,7 +62,7 @@ The data was put into a dataframe after using Beautiful Soup to parse the xml fi
 
 After all binning was completed, I used the date range that I worked to create a new dataframe called school_df. This dataframe only included days that I was at work. The length of the original dataframe to the school_df had been shortened to 11,294 rows.
 
-[school_df]()
+[school_df](https://github.com/bmcnamee96/health_data/blob/main/Pictures/school_df.png)
 
 ## Machine Learning
 Using the actual values for the heart rates does not allow a machine learning model to accurately predict because of the granularity. Bins were created for the heart rate values to reduce the variance.  The bins from data processing were not used for the model because of the range differences for each bin. The bins for the machine learning model used 8 bins that were evenly spaced.
@@ -77,13 +77,13 @@ Using the actual values for the heart rates does not allow a machine learning mo
 - Random forest classifier improved a lot over the linear regression but was still not very good at predicting heart rate. The training score was 47.46% and the testing score was 48.16%.  This means that the model will be correct about 50% of the time when trying to predict a heart rate.
 - The main reason that this occured was because of the high number of values within certain bins.  The model determined that if it predicted either bin 2 or bin 3 it would be correct 50% of the time.  This can be seen when looking at a value counts of the predicted_values and values_bins.
 
-[predictions]()
+[predictions](https://github.com/bmcnamee96/health_data/blob/main/Pictures/predictions.png)
 
 #### Feature Importance
 Random forest classifier includes a feature importance determinant that can be used to see which features have the most impact on the target. 
 - In our model both features had a considerable impact on the target.
 
-[feature_importance]()
+[feature_importance](https://github.com/bmcnamee96/health_data/blob/main/Pictures/features.png)
 
 ## Conclusion
 In conclusion there was no way to predict heart rate when using the time of day and day of the week.
