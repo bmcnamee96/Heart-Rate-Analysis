@@ -74,7 +74,7 @@ A Tukey-Kramer test compares each group to each other (A-B, A-C, A-D, B-C, etc.)
 ### Day of Week
 - There is a statistical significant difference in the average heart rate values and the day of the week (p = 0.001000). The below picture shows that there is a significant difference between every group compared.
 
-![tukey_dow]()
+![tukey_dow](https://github.com/bmcnamee96/health_data/blob/main/Pictures/day_of_week_tukey.png)
 
 ### Day Sections
 - There is a significant difference between:
@@ -85,7 +85,7 @@ A Tukey-Kramer test compares each group to each other (A-B, A-C, A-D, B-C, etc.)
   - section 6 and section 3 (p = 0.008781)
   - section 9 and section 3 (p = 0.001000)
 
-![tukey_ds]()
+![tukey_ds](https://github.com/bmcnamee96/health_data/blob/main/Pictures/day_sections_tukey.png)
 
 ## Machine Learning
 Using the actual values for the heart rates does not allow a machine learning model to accurately predict because of the granularity. Bins were created for the heart rate values to reduce the variance.  The bins from data processing were not used for the model because of the range differences for each bin. The bins for the machine learning model used 8 bins that were evenly spaced.
