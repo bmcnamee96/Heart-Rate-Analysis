@@ -8,12 +8,14 @@
 
 ## Packages and Libraries
 - Python
+  - Jupyter Notebook
   - Pandas
   - Beautiful Soup
   - Datetime
   - Numpy
   - SkLearn (LinearRegression, RandomForestClassifier)
   - Matplotlib
+  - Bioinfokit
  - Tableau
 
 ## The Data
@@ -63,6 +65,27 @@ The data was put into a dataframe after using Beautiful Soup to parse the xml fi
 After all binning was completed, I used the date range that I worked to create a new dataframe called school_df. This dataframe only included days that I was at work. The length of the original dataframe to the school_df had been shortened to 11,294 rows.
 
 ![school_df](https://github.com/bmcnamee96/health_data/blob/main/Pictures/school_df.png)
+
+## Statistical Analysis
+Using bioinfokit's stat package a Tukey-Kramer test was run to determine significance between (< 0.05) all the day_sections and all day_of_week values.
+
+A Tukey-Kramer test compares each group to each other (A-B, A-C, A-D, B-C, etc.) when there is an unequal sample size. 
+
+### Day of Week
+- There is a statistical significant difference in the average heart rate values and the day of the week (p = 0.001000). The below picture shows that there is a significant difference between every group compared.
+
+![tukey_dow]()
+
+### Day Sections
+- There is a significant difference between:
+  - section 0 and all other sections of the day (p = 0.001000)
+  - section 1 and sections 3 and 4 (p = 0.001000)
+  - section 2 and section 9 (p = 0.014156)
+  - section 4 and sections 6 (p = 0.003039) and 9 (p = 0.001000)
+  - section 6 and section 3 (p = 0.008781)
+  - section 9 and section 3 (p = 0.001000)
+
+![tukey_ds]()
 
 ## Machine Learning
 Using the actual values for the heart rates does not allow a machine learning model to accurately predict because of the granularity. Bins were created for the heart rate values to reduce the variance.  The bins from data processing were not used for the model because of the range differences for each bin. The bins for the machine learning model used 8 bins that were evenly spaced.
